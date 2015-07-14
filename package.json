@@ -1,0 +1,20 @@
+{
+  "name": "external-bundle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify -r ./moduleA.js:module-a -r ./moduleB.js:module-b > modules.js",
+    "serve": "budo index.js -- -x module-a -x module-b | opnr",
+    "start": "npm run build & npm run serve"
+  },
+  "author": "Mikko Haapoja <me@mikkoh.com>",
+  "license": "ISC",
+  "dependencies": {
+    "scriptjs": "^2.5.7"
+  },
+  "devDependencies": {
+    "browserify": "^10.2.6",
+    "opnr": "^1.0.4"
+  }
+}
